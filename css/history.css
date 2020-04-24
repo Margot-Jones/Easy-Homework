@@ -1,0 +1,302 @@
+body {
+    font-family: "Fira Sans", sans-serif;
+    margin-top: 3em;
+}
+
+.two--col {
+    display: block;
+    margin-top: 10%;
+}
+
+.slide--parent {
+    padding: 100px;
+    max-width: 1100px;
+    margin: auto;
+    overflow: hidden;
+}
+
+p {
+    color: #fff;
+    line-height: 1.8;
+}
+
+h1 {
+    letter-spacing: 10px;
+    color: #fff;
+    margin: 0;
+}
+
+small {
+    font-style: italic;
+    font-weight: 700;
+    margin-bottom: 0.5em;
+    display: inline-block;
+    color: #fff;
+    position: relative;
+    padding-left: 3em;
+}
+
+small:after {
+    content: "";
+    position: absolute;
+    left: -0em;
+    top: 50%;
+    height: 4px;
+    width: 2.4em;
+    background: red;
+    transform: translateY(-50%);
+}
+
+.parent--el {
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.parent--el .two--col {
+    display: flex;
+    align-items: center;
+}
+
+figure {
+    margin: 0;
+}
+
+.is-item {
+    width: 60%;
+}
+
+.is-item.has--img {
+    width: 40%;
+}
+
+.the-img {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+}
+
+.the-img img {
+    width: 100%;
+}
+
+.is-item--inner {
+    padding: 0em 3em;
+    text-align: center;
+}
+
+.the-img {
+    overflow: hidden;
+}
+
+.the-img img {
+    position: relative;
+    transform: translateX(100%);
+    transition: all 600ms ease;
+}
+
+.is-item--inner p {
+    transform: translateY(15px);
+    position: relative;
+    opacity: 0;
+    transition: all 400ms ease;
+}
+
+h1 {
+    overflow: hidden;
+}
+
+h1 span {
+    transform: translateY(100%);
+    position: relative;
+    transition: all 500ms ease;
+    display: inline-block;
+}
+
+.parent--el.is-selected .the-img {
+    overflow: hidden;
+}
+
+.parent--el.is-selected .the-img img {
+    position: relative;
+    transform: translateX(0%);
+    transition-delay: 500ms;
+}
+
+.parent--el.is-selected .is-item--inner p {
+    transform: translateY(0px);
+    transition-delay: 500ms;
+    position: relative;
+    opacity: 1;
+}
+
+.parent--el.is-selected .is-item--inner p:nth-of-type(2) {
+    transition-delay: 700ms;
+}
+
+.parent--el.is-selected .is-item--inner p:nth-of-type(3) {
+    transition-delay: 900ms;
+}
+
+.parent--el.is-selected h1 {
+    overflow: hidden;
+}
+
+.parent--el.is-selected h1 span {
+    transform: translateY(0%);
+    position: relative;
+    transition-delay: 400ms;
+    display: inline-block;
+}
+
+.parent--el.is-selected hr {
+    width: 100%;
+    max-width: 8em;
+    transition-delay: 500ms;
+}
+
+.parent--el.is-selected small {
+    transform: translateY(0px);
+    opacity: 1;
+    transition-delay: 400ms;
+}
+
+.parent--el.is-selected small:after {
+    width: 100%;
+    transition-delay: 600ms;
+    max-width: 2.4em;
+}
+
+/*---------IMG---------*/
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700);
+
+.frame {
+    position: absolute;
+    width: 400px;
+    height: 500px;
+    margin-top: -250px;
+    margin-left: 0px;
+    border-radius: 2px;
+    box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    background: #333;
+    color: #fff;
+    font-family: 'Open Sans', Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.slices {
+    position: absolute;
+    width: 400px;
+    height: 500px;
+    background: url("../img/gagarin1.jpg") center center no-repeat;
+    background-size: 400px 500px;
+    cursor: pointer;
+}
+
+.slices:hover h1, .slices:hover h2 {
+    -webkit-transform: translateX(-40px);
+    transform: translateX(-40px);
+}
+
+.slices:hover h2 {
+    -webkit-transform: translateX(40px);
+    transform: translateX(40px);
+}
+
+.slices:hover .slice {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.slices .slice {
+    position: relative;
+    z-index: 2;
+    float: left;
+    box-sizing: border-box;
+    width: 50px;
+    height: 500px;
+    background: url("../img/gagarin2.jpg") center center no-repeat;
+    background-size: 400px 500px;
+    -webkit-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+}
+
+.slices .slice-1 {
+    background-position: 0px 0;
+    -webkit-transform: translateY(-40px);
+    transform: translateY(-40px);
+    opacity: 0;
+}
+
+.slices .slice-2 {
+    background-position: -50px 0;
+    -webkit-transform: translateY(-40px);
+    transform: translateY(-40px);
+    opacity: 0;
+}
+
+.slices .slice-3 {
+    background-position: -100px 0;
+    -webkit-transform: translateY(-40px);
+    transform: translateY(-40px);
+    opacity: 0;
+}
+
+.slices .slice-4 {
+    background-position: -150px 0;
+    -webkit-transform: translateY(-40px);
+    transform: translateY(-40px);
+    opacity: 0;
+}
+
+.slices .slice-5 {
+    background-position: -200px 0;
+    -webkit-transform: translateY(-40px);
+    transform: translateY(-40px);
+    opacity: 0;
+}
+
+.slices .slice-6 {
+    background-position: -250px 0;
+    -webkit-transform: translateY(-40px);
+    transform: translateY(-40px);
+    opacity: 0;
+}
+
+.slices .slice-7 {
+    background-position: -300px 0;
+    -webkit-transform: translateY(-40px);
+    transform: translateY(-40px);
+    opacity: 0;
+}
+
+.slices .slice-8 {
+    background-position: -350px 0;
+    -webkit-transform: translateY(-40px);
+    transform: translateY(-40px);
+    opacity: 0;
+}
+
+.slices .slice-2 {
+    -webkit-transform: translateY(40px);
+    transform: translateY(40px);
+}
+
+.slices .slice-4 {
+    -webkit-transform: translateY(40px);
+    transform: translateY(40px);
+}
+
+.slices .slice-6 {
+    -webkit-transform: translateY(40px);
+    transform: translateY(40px);
+}
+
+.slices .slice-8 {
+    -webkit-transform: translateY(40px);
+    transform: translateY(40px);
+}

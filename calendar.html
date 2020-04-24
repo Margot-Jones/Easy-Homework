@@ -1,0 +1,4200 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/default.css" />
+		<link rel="stylesheet" type="text/css" href="css/bookblock.css" />
+		
+		<link rel="stylesheet" type="text/css" href="css/header.css">
+		<link rel="stylesheet" type="text/css" href="css/nifty.min.css">
+		<link rel="stylesheet" type="text/css" href="css/demo1.css" />
+		<script src="js/modernizr.custom.js"></script>
+  </head>
+  	<style>
+  	.bb-bookblock{
+  		margin-top: 10vh;
+  		margin-bottom: 10vh;
+  	}
+
+  	.calendar_cont{
+  		margin-bottom: 10vh;
+  		width: 100%;
+  		height: 100vh;
+		background-color: white;
+  	}
+  	.row{
+  		font-family: ROBOTO;
+  		color: white;
+  		display: flex;
+  		flex-direction: row;
+  		justify-content: space-around;
+  		align-items: center;
+  	}
+  	.column{
+		display: flex;
+  		flex-direction: column;
+  		justify-content: center;
+  		align-items: center;
+  	}
+  	.mon-wed_cont,.thu-sat_cont{
+  		width: 43%;
+  		height: 100%;
+  		border: none !important;
+  		background-color: white !important;
+  	}
+  	.mon,.tue,.wed,.thu,.fri,.sat{
+  		width: 100%;
+  		height: 32%;
+  		list-style-type: none;
+  		padding: 2px;
+  		margin: 2px;
+		background-color: #4D8DCE;
+		border-radius: 5px;
+  	}
+  	.column .row{
+  		width: 100%;
+  		height: 32%;
+  		
+  	}
+  	.column .first_li{
+  		padding: 1vh;
+  		width: 90%;
+  	}
+	.row .lesson_name,.row .homework_cont{
+		width: 30%;
+		height: 0.5em;
+		margin-block-start: 2px;
+    	margin-block-end: 1em;
+	}
+	.row .homework_cont{
+		width: 55%;
+		height: 100%;
+		border-left: 2px solid white;
+		border-right: 2px solid white;
+		padding-left: 5px;
+	}
+	
+	.sat li{
+		
+	}
+	
+	.a_look{
+    text-decoration: underline;
+    text-decoration-color: #000;
+    color: #00FE66;
+  }
+  	.date{
+  		width:35%;
+  	}
+  	.first_li{
+  		display: flex;
+  		flex-direction: row; 
+  		justify-content: space-between;
+
+  	}
+  	.fa-circle{
+  		color: lightgrey;
+  		font-size: 12px;
+  	}
+  	.fa-check{
+		color: green;
+		font-size: 16px;
+		display: none;
+	}
+	.fa-bell{
+  		display: none;
+  		color: orange;
+  		font-size: 16px;
+  	}
+  	.dot{
+  		width: 16px;
+  		display: flex;
+  		justify-content: center;
+  		align-items: center;
+  	}
+  	.mark{
+  		width: 25px;
+  		color: red;
+  	}
+  	.first_li :last-child{
+  		width: 32px;
+  	}
+  	
+  	.prev-next{
+  		margin-bottom: 3%;
+  		width: 100%;
+  		height: 100%;
+  		overflow: hidden;
+  		display: flex;
+  		justify-content: space-between;
+  		align-items: center;
+  		
+  	}
+  	#bb-nav-prev,#bb-nav-next{
+  		height: 90%;
+  		width: 4%;
+  		display: flex;
+  		justify-content: center;
+  		align-items: center;
+  	}
+  	.page_ch{
+  		height: 20px;
+  	}
+	.navbar-top-links{
+		display: none;
+	}
+  </style>
+  <body>
+  		
+<header id="navbar" style="position: relative;">
+            <div id="navbar-container" class="boxed">
+
+                <!--Brand logo & name-->
+                <!--================================-->
+                <a href="information.html">
+                <div class="navbar-header">
+                        <img src="./img/logo.png" alt="Nifty Logo" class="brand-icon">
+
+                        <div class="brand-title"><span class="brand-text">EasyHomework</span>
+                        </div>
+                </div>
+                                        </a>
+                <!--================================-->
+                <!--End brand logo & name-->
+
+
+                <!--Navbar Dropdown-->
+                <!--================================-->
+                <div class="navbar-content">
+                    <ul class="nav navbar-top-links">
+						<a href="information.html"><i class="fas fa-home" style="color: white;"></i></a>
+
+						                        <li class="tgl-menu-btn">
+                            <a class="mainnav-toggle" href="http://www.themeon.net/nifty/v2.9.1/#">
+                                <i class="fas fa-bars"></i>
+                            </a>
+                        </li>
+                        <!--Navigation toogle button-->
+                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                        
+                        </li>
+                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                        <!--End Navigation toogle button-->
+
+
+
+                        <!--Search-->
+                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                        <li>
+                            <div class="custom-search-form">
+                                <label class="btn btn-trans" for="search-input" data-toggle="collapse" data-target="#nav-searchbox">
+                                    <i class="fas fa-search"></i>
+                                </label>
+                                <form>
+                                    <div class="search-container collapse" id="nav-searchbox">
+                                        <input id="search-input" type="text" class="form-control" placeholder="Type for search...">
+                                    </div>
+                                </form>
+                            </div>
+                        </li>
+                    </ul>
+                    
+                </div>
+            </div>
+        </header>
+
+
+<div class="prev-next">
+		<!-- <a id="bb-nav-first" href="#" class="bb-custom-icon bb-custom-icon-first">First page</a> -->
+		<a id="bb-nav-prev" href="#" class="bb-custom-icon bb-custom-icon-arrow-right"><img class="page_ch" src="img/prev.png"></a>
+<div id="bb-bookblock" class="bb-bookblock">
+	<div class="bb-item">
+		<div class="calendar_cont row">
+			<div class="mon-wed_cont column">
+				<ul class="mon column">
+					<li class="first_li">
+						<div>Понеділок </div>
+						<div class="date">24 06 2019</div>
+						<div>Оцінка</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							1.Укр.мова
+						</div>
+						
+						<div class="homework_cont">
+							<div href="test.html" class="a_look">тести</div>	
+						</div>
+						<div class="mark">12</div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							2.Математика
+						</div>
+						
+						<div class="homework_cont">
+							<a href="math.html" class="a_look">тести</a>
+						</div>
+						<div class="mark">12</div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							3.Укр.література
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark">12</div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							4.Історія
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark">12</div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							5.Природознавство
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark">12</div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							6.Фіз.культура
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							7.
+						</div>
+					
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							8.
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+				</ul>
+				<ul class="tue column">
+					<li class="first_li">
+						<div>Вівторок </div>
+						<div class="date">25 06 2019</div>
+						<div>Оцінка</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							1.Інформатика
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							2.Біологія
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							3.Укр.мова
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							4.Укр.література
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							5.Праця
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							6.Англ.мова
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							7.
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+						8.	
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+				</ul>
+				<ul class="wed column">
+					<li class="first_li">
+						<div>Середа </div>
+						<div class="date">26 06 2019</div>
+						<div>Оцінка</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							1.Англ.мова
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark">12</div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							2.Математика
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark">12</div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							3.Математика
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark">12</div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							4.Історія
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark">12</div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							5.Осн.здоров'я
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark">12</div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							6.Фіз.культура
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							7.
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							8.
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="thu-sat_cont column">
+				<ul class="thu column">
+					<li class="first_li">
+						<div>Четверг </div>
+						<div class="date">27 06 2019</div>
+						<div>Оцінка</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							1.Заруб.література
+						</div>
+						
+						<div class="homework_cont">
+								
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							2.Фізика
+						</div>
+					
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							3.Англ.мова
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							4.Праця
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							5.Фіз.культура
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							6.Мистецтво
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							7.
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							8.
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						<!-- </div> -->
+					</li>
+				</ul>
+				<ul class="fri column">
+					<li class="first_li">
+						<div>П'ятниця </div>
+						<div class="date">28 06 2019</div>
+						<div>Оцінка</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							1.Хімія
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							2.Біологія
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							3.Природознавство
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							4.Право
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							5.Фіз.культура
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							6.
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							7.
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							8.
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+				</ul>
+				<ul class="sat column">
+					<li class="first_li">
+						<div>Субота </div>
+						<div class="date">29 06 2019</div>
+						<div>Оцінка</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							1.
+						</div>
+						
+						<div class="homework_cont">
+								
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							2.
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							3.
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							4.
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							5.
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							6.
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							7.
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							8.
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="bb-item">
+		<div class="calendar_cont row">
+			<div class="mon-wed_cont column">
+				<ul class="mon column">
+					<li class="first_li">
+						<div>Понеділок </div>
+						<div class="date">01 07 2019</div>
+						<div>Оцінка</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							1.Укр.мова
+						</div>
+						
+						<div class="homework_cont">
+							<div href="test.html" class="a_look">тести</div>	
+						</div>
+						<div class="mark">12</div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							2.Математика
+						</div>
+						
+						<div class="homework_cont">
+							<a href="math.html" class="a_look">тести</a>
+						</div>
+						<div class="mark">12</div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							3.Укр.література
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark">12</div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							4.Історія
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark">12</div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							5.Природознавство
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark">12</div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							6.Фіз.культура
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							7.
+						</div>
+					
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							8.
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+				</ul>
+				<ul class="tue column">
+					<li class="first_li">
+						<div>Вівторок </div>
+						<div class="date">02 07 2019</div>
+						<div>Оцінка</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							1.Інформатика
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							2.Біологія
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							3.Укр.мова
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							4.Укр.література
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							5.Праця
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							6.Англ.мова
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							7.
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+						8.	
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+				</ul>
+				<ul class="wed column">
+					<li class="first_li">
+						<div>Середа </div>
+						<div class="date">03 07 2019</div>
+						<div>Оцінка</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							1.Англ.мова
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark">12</div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							2.Математика
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark">12</div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							3.Математика
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark">12</div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							4.Історія
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark">12</div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							5.Осн.здоров'я
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark">12</div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							6.Фіз.культура
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							7.
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							8.
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="thu-sat_cont column">
+				<ul class="thu column">
+					<li class="first_li">
+						<div>Четверг </div>
+						<div class="date">04 07 2019</div>
+						<div>Оцінка</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							1.Заруб.література
+						</div>
+						
+						<div class="homework_cont">
+								
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							2.Фізика
+						</div>
+					
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							3.Англ.мова
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							4.Праця
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							5.Фіз.культура
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							6.Мистецтво
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							7.
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							8.
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						<!-- </div> -->
+					</li>
+				</ul>
+				<ul class="fri column">
+					<li class="first_li">
+						<div>П'ятниця </div>
+						<div class="date">05 07 2019</div>
+						<div>Оцінка</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							1.Хімія
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							2.Біологія
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							3.Природознавство
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							4.Право
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							5.Фіз.культура
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							6.
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							7.
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							8.
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+				</ul>
+				<ul class="sat column">
+					<li class="first_li">
+						<div>Субота </div>
+						<div class="date">06 07 2019</div>
+						<div>Оцінка</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							1.
+						</div>
+						
+						<div class="homework_cont">
+								
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							2.
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							3.
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							4.
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							5.
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							6.
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							7.
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							8.
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="bb-item">
+		<div class="calendar_cont row">
+			<div class="mon-wed_cont column">
+				<ul class="mon column">
+					<li class="first_li">
+						<div>Понеділок </div>
+						<div class="date">08 07 2019</div>
+						<div>Оцінка</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							1.Укр.мова
+						</div>
+						
+						<div class="homework_cont">
+							<div href="test.html" class="a_look">тести</div>	
+						</div>
+						<div class="mark">12</div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							2.Математика
+						</div>
+						
+						<div class="homework_cont">
+							<a href="math.html" class="a_look">тести</a>
+						</div>
+						<div class="mark">12</div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							3.Укр.література
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark">12</div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							4.Історія
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark">12</div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							5.Природознавство
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark">12</div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							6.Фіз.культура
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							7.
+						</div>
+					
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							8.
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+				</ul>
+				<ul class="tue column">
+					<li class="first_li">
+						<div>Вівторок </div>
+						<div class="date">09 07 2019</div>
+						<div>Оцінка</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							1.Інформатика
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							2.Біологія
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							3.Укр.мова
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							4.Укр.література
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							5.Праця
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							6.Англ.мова
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							7.
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+						8.	
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+				</ul>
+				<ul class="wed column">
+					<li class="first_li">
+						<div>Середа </div>
+						<div class="date">10 07 2019</div>
+						<div>Оцінка</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							1.Англ.мова
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark">12</div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							2.Математика
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark">12</div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							3.Математика
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark">12</div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							4.Історія
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark">12</div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							5.Осн.здоров'я
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark">12</div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							6.Фіз.культура
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							7.
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							8.
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="thu-sat_cont column">
+				<ul class="thu column">
+					<li class="first_li">
+						<div>Четверг </div>
+						<div class="date">11 07 2019</div>
+						<div>Оцінка</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							1.Заруб.література
+						</div>
+						
+						<div class="homework_cont">
+								
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							2.Фізика
+						</div>
+					
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							3.Англ.мова
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							4.Праця
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							5.Фіз.культура
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							6.Мистецтво
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							7.
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							8.
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						<!-- </div> -->
+					</li>
+				</ul>
+				<ul class="fri column">
+					<li class="first_li">
+						<div>П'ятниця </div>
+						<div class="date">12 07 2019</div>
+						<div>Оцінка</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							1.Хімія
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							2.Біологія
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							3.Природознавство
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							4.Право
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							5.Фіз.культура
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							6.
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							7.
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							8.
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+				</ul>
+				<ul class="sat column">
+					<li class="first_li">
+						<div>Субота </div>
+						<div class="date">13 07 2019</div>
+						<div>Оцінка</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							1.
+						</div>
+						
+						<div class="homework_cont">
+								
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							2.
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							3.
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							4.
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							5.
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							6.
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							7.
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							8.
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="bb-item">
+		<div class="calendar_cont row">
+			<div class="mon-wed_cont column">
+				<ul class="mon column">
+					<li class="first_li">
+						<div>Понеділок </div>
+						<div class="date">15 07 2019</div>
+						<div>Оцінка</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							1.Укр.мова
+						</div>
+						
+						<div class="homework_cont">
+							<div href="test.html" class="a_look">тести</div>	
+						</div>
+						<div class="mark">12</div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							2.Математика
+						</div>
+						
+						<div class="homework_cont">
+							<a href="math.html" class="a_look">тести</a>
+						</div>
+						<div class="mark">12</div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							3.Укр.література
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark">12</div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							4.Історія
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark">12</div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							5.Природознавство
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark">12</div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							6.Фіз.культура
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							7.
+						</div>
+					
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							8.
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+				</ul>
+				<ul class="tue column">
+					<li class="first_li">
+						<div>Вівторок </div>
+						<div class="date">16 07 2019</div>
+						<div>Оцінка</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							1.Інформатика
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							2.Біологія
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							3.Укр.мова
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							4.Укр.література
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							5.Праця
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							6.Англ.мова
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							7.
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+						8.	
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+				</ul>
+				<ul class="wed column">
+					<li class="first_li">
+						<div>Середа </div>
+						<div class="date">17 07 2019</div>
+						<div>Оцінка</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							1.Англ.мова
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark">12</div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							2.Математика
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark">12</div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							3.Математика
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark">12</div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							4.Історія
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark">12</div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							5.Осн.здоров'я
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark">12</div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							6.Фіз.культура
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							7.
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							8.
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="thu-sat_cont column">
+				<ul class="thu column">
+					<li class="first_li">
+						<div>Четверг </div>
+						<div class="date">18 07 2019</div>
+						<div>Оцінка</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							1.Заруб.література
+						</div>
+						
+						<div class="homework_cont">
+								
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							2.Фізика
+						</div>
+					
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							3.Англ.мова
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							4.Праця
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							5.Фіз.культура
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							6.Мистецтво
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							7.
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							8.
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						<!-- </div> -->
+					</li>
+				</ul>
+				<ul class="fri column">
+					<li class="first_li">
+						<div>П'ятниця </div>
+						<div class="date">19 07 2019</div>
+						<div>Оцінка</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							1.Хімія
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							2.Біологія
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							3.Природознавство
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							4.Право
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							5.Фіз.культура
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							6.
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							7.
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							8.
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+				</ul>
+				<ul class="sat column">
+					<li class="first_li">
+						<div>Субота </div>
+						<div class="date">20 07 2019</div>
+						<div>Оцінка</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							1.
+						</div>
+						
+						<div class="homework_cont">
+								
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							2.
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							3.
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							4.
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							5.
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							6.
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							7.
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							8.
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="bb-item">
+		<div class="calendar_cont row">
+			<div class="mon-wed_cont column">
+				<ul class="mon column">
+					<li class="first_li">
+						<div>Понеділок </div>
+						<div class="date">22 07 2019</div>
+						<div>Оцінка</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							1.Укр.мова
+						</div>
+						
+						<div class="homework_cont">
+							<div href="test.html" class="a_look">тести</div>	
+						</div>
+						<div class="mark">12</div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							2.Математика
+						</div>
+						
+						<div class="homework_cont">
+							<a href="math.html" class="a_look">тести</a>
+						</div>
+						<div class="mark">12</div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							3.Укр.література
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark">12</div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							4.Історія
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark">12</div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							5.Природознавство
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark">12</div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							6.Фіз.культура
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							7.
+						</div>
+					
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							8.
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+				</ul>
+				<ul class="tue column">
+					<li class="first_li">
+						<div>Вівторок </div>
+						<div class="date">23 07 2019</div>
+						<div>Оцінка</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							1.Інформатика
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							2.Біологія
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							3.Укр.мова
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							4.Укр.література
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							5.Праця
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							6.Англ.мова
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							7.
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+						8.	
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+				</ul>
+				<ul class="wed column">
+					<li class="first_li">
+						<div>Середа </div>
+						<div class="date">24 07 2019</div>
+						<div>Оцінка</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							1.Англ.мова
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark">12</div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							2.Математика
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark">12</div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							3.Математика
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark">12</div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							4.Історія
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark">12</div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							5.Осн.здоров'я
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark">12</div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							6.Фіз.культура
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							7.
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							8.
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="thu-sat_cont column">
+				<ul class="thu column">
+					<li class="first_li">
+						<div>Четверг </div>
+						<div class="date">25 07 2019</div>
+						<div>Оцінка</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							1.Заруб.література
+						</div>
+						
+						<div class="homework_cont">
+								
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							2.Фізика
+						</div>
+					
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							3.Англ.мова
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							4.Праця
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							5.Фіз.культура
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							6.Мистецтво
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							7.
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							8.
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						<!-- </div> -->
+					</li>
+				</ul>
+				<ul class="fri column">
+					<li class="first_li">
+						<div>П'ятниця </div>
+						<div class="date">26 07 2019</div>
+						<div>Оцінка</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							1.Хімія
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							2.Біологія
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							3.Природознавство
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							4.Право
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i>
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							5.Фіз.культура
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							6.
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							7.
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							8.
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+				</ul>
+				<ul class="sat column">
+					<li class="first_li">
+						<div>Субота </div>
+						<div class="date">27 07 2019</div>
+						<div>Оцінка</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							1.
+						</div>
+						
+						<div class="homework_cont">
+								
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							2.
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							3.
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							4.
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							5.
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							6.
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							7.
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+					<li class="row">
+						<div class="lesson_name">
+							8.
+						</div>
+						
+						<div class="homework_cont">
+							
+						</div>
+						<div class="mark"></div>
+						<div class="click dot" onclick="clickMe(this)">
+							<!-- <i class=" fas fa-circle"></i>
+							<i class=" bell far fa-bell"></i>
+							<i class=" fas fa-check"></i> -->
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>	
+<footer> 
+
+        <div class="footer-container">
+            <p>
+                <a class="Rights" href="https://ru.wikipedia.org/wiki/All_rights_reserved"><i class="fas fa-copyright"></i> All rights reserved</a>
+            </p>
+            <p>
+                <a class=" Aboutus" href="http://google.com"><i class="fas fa-info-circle"></i> About us</a>
+            </p>
+            <div class="Logo-foot">
+            </div>
+
+            <p><a class="Help" href="hhtp://youtube.com"><i class="fas fa-user-astronaut"></i> Help</a></p>
+
+            <div class="icons">
+                <div class="container-icons">
+
+                    <a class="img a"><i class="fab fa-facebook-f"></i></a>
+                    <a class="img a"><i class="fab fa-twitter"></i></a>
+                    <a class="img a"><i class="fab fa-linkedin-in"></i></a>
+                    <a class="img a"><i class="fab fa-youtube"></i></a>
+                    <a class="img a"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+        </div>
+        
+    </footer>
+	
+		<a id="bb-nav-next" href="#" class="bb-custom-icon bb-custom-icon-arrow-right"><img class="page_ch" src="img/next.png"></a>
+		<!-- <a id="bb-nav-last" href="#" class="bb-custom-icon bb-custom-icon-last">Last page</a> -->
+	</div>		
+
+
+
+
+<script type="text/javascript" src="js/dotbellcheck.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script src="js/jquerypp.custom.js"></script>
+		<script src="js/jquery.bookblock.js"></script>
+		<script>
+			var Page = (function() {
+				
+				var config = {
+						$bookBlock : $( '#bb-bookblock' ),
+						$navNext : $( '#bb-nav-next' ),
+						$navPrev : $( '#bb-nav-prev' ),
+						$navFirst : $( '#bb-nav-first' ),
+						$navLast : $( '#bb-nav-last' )
+					},
+					init = function() {
+						config.$bookBlock.bookblock( {
+							speed : 800,
+							shadowSides : 0.8,
+							shadowFlip : 0.7
+						} );
+						initEvents();
+					},
+					initEvents = function() {
+						
+						var $slides = config.$bookBlock.children();
+
+						// add navigation events
+						config.$navNext.on( 'click touchstart', function() {
+							config.$bookBlock.bookblock( 'next' );
+							return false;
+						} );
+
+						config.$navPrev.on( 'click touchstart', function() {
+							config.$bookBlock.bookblock( 'prev' );
+							return false;
+						} );
+
+						config.$navFirst.on( 'click touchstart', function() {
+							config.$bookBlock.bookblock( 'first' );
+							return false;
+						} );
+
+						config.$navLast.on( 'click touchstart', function() {
+							config.$bookBlock.bookblock( 'last' );
+							return false;
+						} );
+						
+						// add swipe events
+						$slides.on( {
+							'swipeleft' : function( event ) {
+								config.$bookBlock.bookblock( 'next' );
+								return false;
+							},
+							'swiperight' : function( event ) {
+								config.$bookBlock.bookblock( 'prev' );
+								return false;
+							}
+						} );
+
+						// add keyboard events
+						$( document ).keydown( function(e) {
+							var keyCode = e.keyCode || e.which,
+								arrow = {
+									left : 37,
+									up : 38,
+									right : 39,
+									down : 40
+								};
+
+							switch (keyCode) {
+								case arrow.left:
+									config.$bookBlock.bookblock( 'prev' );
+									break;
+								case arrow.right:
+									config.$bookBlock.bookblock( 'next' );
+									break;
+							}
+						} );
+					};
+
+					return { init : init };
+
+			})();
+		</script>
+		<script>
+				Page.init();
+		</script>
+				<script src="js/index.js"></script>
+	</dody>
+	<script>
+		$('.btn-trans').on('click', function(){
+		    $('#demo-nifty-settings').removeClass('active');
+	    });
+	</script>
+	<script>
+		$('#demo-set-btn').on('click', function(){
+		    $('#demo-nifty-settings').toggleClass('active');
+	    });
+	</script>
+  </body>
+</html>

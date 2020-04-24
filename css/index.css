@@ -1,0 +1,47 @@
+.logo-img {
+    display: flex;
+    align-items: center;
+}
+.logo-img .brand-icon {
+    margin: 0 !important;
+    margin-left: 5px !important;
+}
+.logo-img .brand-text {
+    margin-left: 5px;
+}
+#navbar-container {
+    display: flex;
+    justify-content: space-between;
+}
+.Logo-foot img {
+    width: 30px;
+}
+.firstBlock {
+    width: 100%;
+    min-height: 100vh;
+    background-image: url(../img/bg.jpg);
+    background-size: cover;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: Axis;
+}
+.firstBlock h1 {
+    color: rgba(0, 0, 0, 0.9);
+    font-size: 10em;
+    opacity: .9;
+}
+.firstBlock h2 {
+    font-size: 4.4em;
+    color: rgba(0, 0, 0, 0.9);
+    opacity: .9;
+    margin-top: -0.2em;
+}
+#Arrow {
+    width: 64px;
+    filter: invert(1);
+    opacity: .8;
+    margin-top: 5em;
+}

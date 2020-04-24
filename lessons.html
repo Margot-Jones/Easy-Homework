@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  </head>
+  <style>
+  	body{
+  	}
+  	.lessons_cont{
+  		margin-top: 7vh;
+  		display: flex;
+  		flex-direction: column;
+  		justify-content: center;
+  		align-items: center;
+  		margin-left: -3%;
+  	}
+  	.blank_lesson{
+  		margin-top: 7vh;
+  		height: 40px;
+		width: 75%;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+
+  	}
+  	.lesson_date{
+		height: 40px;
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		
+	}
+	.lesson_task{
+		height: 600px;
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+	}
+  	.filled_lesson{
+  		width: 75%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+  	}
+  	.no_bell{
+  		height: 50px;
+  		width: 50px;
+  		display: flex;
+  		justify-content: center;
+  		align-items: center;
+  		
+  	}
+  	.fa-bell{
+  		display: none;
+  		color: orange;
+  		font-size: 24px;
+  	}
+  	.line{
+  		height: 100%;
+  		width: 2px;
+  		background-color: lightgrey;
+  	}
+  	.dot,.line_cont{
+  		height: 50px;
+  		width: 16px;
+  		display: flex;
+  		justify-content: center;
+  		align-items: center;
+  	}
+  	.line_cont{
+  		height: 100%;
+  	}
+  	.dot{
+  		color: lightgrey;
+  		font-size: 12px;
+  	}
+  	.task_cont{
+  		height: 100%;
+  		width: 90%;
+  	}
+  	.task_desc{
+		font-size: 24px;
+  	}
+	.date{
+		height: 100%;
+  		width: 90%;
+  		display: flex;
+  		align-items: center;
+	}
+	.task_img{
+		height: 60%;
+		overflow: hidden;
+		border-radius: 10px;
+	}
+	.task_img img{
+		width: 100%;
+	}
+	
+	.underline_cont{
+		height: 32px;
+		display: flex;
+  		justify-content: center;
+  		align-items: flex-end;
+	}
+	.div_underline{
+		height: 2px;
+		width: 100%;
+		background-color: lightgrey;
+	}
+	.fa-check{
+		color: green;
+		font-size: 20px;
+		display: none;
+	}
+	.text_look{
+    text-decoration: underline;
+    text-decoration-color: #fff;
+    color: #000000;
+  }
+  </style>
+  <body>
+	<div class="lessons_cont">
+		<div class="blank_lesson">
+			<div class="line_cont"><div class="line"></div></div>
+			<div class="task_cont"></div>
+		</div>
+
+
+		<div class="filled_lesson">
+			<div class="lesson_date">
+				<div class="click dot" id='0' onclick="clickMe(this)">
+					<i class=" fas fa-circle"></i>
+					<i class=" bell far fa-bell"></i>
+					<i class=" fas fa-check"></i>
+				</div>
+				<div class="oran/grey date">
+					<p>на вівторок, 3 вересня 2019 9:00 AM</p>
+				</div>
+			</div>
+			<a href="test.html" class="text_look">
+				<div class="lesson_task">
+					<div class="line_cont"><div class="line"></div></div>
+					<div class="task_cont">
+						<h2>
+							Українська мова
+						</h2>
+						<p class="task_desc">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus eos, iure voluptates nam mollitia deleniti error fuga nobis soluta laudantium velit corrupti distinctio labore earum, iusto neque nisi dolores perspiciatis.
+						</p>
+						<div class="task_img">
+							<img src="flower.jpg">
+						</div>
+						<div class="underline_cont">
+							<div class="div_underline"></div>
+						</div>
+					</div>
+				</div>
+			</a>
+		</div>
+		
+		<div class="filled_lesson">
+			<div class="lesson_date">
+				<div class="click dot" id='1' onclick="clickMe(this)">
+					<i class=" fas fa-circle"></i>
+					<i class=" bell far fa-bell"></i>
+					<i class=" fas fa-check"></i>
+				</div>
+				<div class="oran/grey date">
+					<p>на вівторок, 3 вересня 2019 9:00 AM</p>
+				</div>
+			</div>
+			<a href="math.html" class="text_look">
+				<div class="lesson_task">
+					<div class="line_cont"><div class="line"></div></div>
+					<div class="task_cont">
+						<h2>
+							Математика
+						</h2>
+						<p class="task_desc">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus eos, iure voluptates nam mollitia deleniti error fuga nobis soluta laudantium velit corrupti distinctio labore earum, iusto neque nisi dolores perspiciatis.
+						</p>
+						<div class="task_img">
+							<img src="math.jpg">
+						</div>
+						<div class="underline_cont">
+							<div class="div_underline"></div>
+						</div>
+					</div>
+				</div>
+			</a>
+		</div>
+
+
+	</div>
+		
+
+
+	<script type="text/javascript" src="js/dotbellcheck.js"></script>
+  </body>
+</html>
